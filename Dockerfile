@@ -30,7 +30,7 @@ RUN apt-get install -y openjdk-8-jdk
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # change working directory
-WORKDIR "/rocketmq/rocketmq-all-4.7.1-bin-release"
+WORKDIR "/rocketmq/rocketmq-all-4.7.1-bin-release/bin"
 
 # use CMD below to reduce memory consumption for test
 # CMD sed -i 's/-Xms4g -Xmx4g -Xmn2g/-Xms512m -Xmx512m -Xmn256m/g' bin/runserver.sh && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && bin/mqnamesrv && tail -f ~/logs/rocketmqlogs/namesrv.log
