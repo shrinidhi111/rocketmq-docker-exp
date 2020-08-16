@@ -17,10 +17,12 @@ RUN mkdir /rocketmq
 WORKDIR "/rocketmq"
 
 # download rocketmq archive
-RUN wget -O /rocketmq/rocketmq-4.7.1.zip "http://archive.apache.org/dist/rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip"
+# RUN wget -O /rocketmq/rocketmq-4.7.1.zip "http://archive.apache.org/dist/rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip"
+
+COPY rocketmq-all-4.7.1-bin-release/ rocketmq/
 
 # extract it
-RUN unzip rocketmq-4.7.1.zip
+# RUN unzip rocketmq-4.7.1.zip
 
 # install openjdk 8
 RUN apt-get install -y openjdk-8-jdk
