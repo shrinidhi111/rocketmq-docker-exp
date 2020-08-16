@@ -9,7 +9,7 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get install -y wget
 RUN apt-get install -y unzip
-
+RUN apt-get install -y tree
 
 # create folder
 RUN mkdir /rocketmq
@@ -19,13 +19,10 @@ WORKDIR "/rocketmq"
 # download rocketmq archive
 # RUN wget -O /rocketmq/rocketmq-4.7.1.zip "http://archive.apache.org/dist/rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip"
 
-RUN ls
 
-RUN mkdir /rocketmq/rocketmq-all-4.7.1-bin-release/
+ADD rocketmq-all-4.7.1-bin-release.tar.gz .
 
-RUN ls
-
-COPY rocketmq-all-4.7.1-bin-release/ rocketmq/rocketmq-all-4.7.1-bin-release/
+RUN tree -aflnh /rocketmq
 
 # extract it
 # RUN unzip rocketmq-4.7.1.zip
