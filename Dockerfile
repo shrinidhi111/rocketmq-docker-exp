@@ -19,7 +19,9 @@ WORKDIR "/rocketmq"
 # download rocketmq archive
 # RUN wget -O /rocketmq/rocketmq-4.7.1.zip "http://archive.apache.org/dist/rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip"
 
-COPY rocketmq-all-4.7.1-bin-release/ rocketmq/
+RUN mkdir /rocketmq/rocketmq-all-4.7.1-bin-release/
+
+COPY rocketmq-all-4.7.1-bin-release/ rocketmq/rocketmq-all-4.7.1-bin-release/
 
 # extract it
 # RUN unzip rocketmq-4.7.1.zip
